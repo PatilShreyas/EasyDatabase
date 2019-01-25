@@ -1,6 +1,6 @@
 # Easy Database (API Demo)
 
-Initialization of Database
+**Initialization of Database**
 ```
 EasyDatabase sql = new EasyDatabase(
            EasyDatabase.MYSQL,  //Database Server
@@ -10,7 +10,14 @@ EasyDatabase sql = new EasyDatabase(
            "PASSWORD");  //Password
 ```
 
-Register Listener for Database events
+**Database Driver Constants**
+```
+EasyDatabase.MYSQL  //For MySQL Database
+EasyDatabase.ORACLE //For Oracle Database
+EasyDatabase.ACCESS //For MS-Access Database
+```
+
+**Register Listener for Database events**
 
 ```
  DatabaseListener dbListener = new DatabaseListener(){
@@ -27,7 +34,7 @@ Register Listener for Database events
    sql.setDatabaseListener(dbListener);
 ```
 
-Insertion
+**Insertion**
 
 ```
 Values values = new Values();
@@ -39,7 +46,7 @@ InsertQuery insertQuery = InsertQuery.into("emp").values(values);
 sql.insert(insertQuery);
 ```
 
-Select from Table 
+**Select from Table **
 
 ```
 SelectQuery select = SelectQuery.select()
@@ -60,7 +67,7 @@ SelectQuery select = SelectQuery.select()
     }catch(Exception e){e.printStackTrace();}
 ```
 
-Deletion of Record
+**Deletion of Record**
 
 ```
 DeleteQuery delete = DeleteQuery.fromTable("emp")
