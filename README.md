@@ -1,4 +1,4 @@
-# EasyDatabase
+# EasyDatabase (API Example)
 
        EasyDatabase sql = new EasyDatabase(
                EasyDatabase.MYSQL,  //Database Server
