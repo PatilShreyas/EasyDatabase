@@ -1,14 +1,11 @@
 # EasyDatabase
 
-public class SQLDB {
-    public static void main(String[] args) {
-       
        EasyDatabase sql = new EasyDatabase(
-               EasyDatabase.ACCESS,  //Database Server
-               "D:\\Backup\\Database.accdb", //Host or File
-               null, //Database
-               null, //Username
-               null);  //Password
+               EasyDatabase.MYSQL,  //Database Server
+               "DATABASE_URL", //Host or File
+               "DATABASE_NAME", //Database
+               "USERNAME", //Username
+               "PASSWORD");  //Password
        
        DatabaseListener dbListener = new DatabaseListener(){
             @Override
@@ -23,13 +20,6 @@ public class SQLDB {
         };
        sql.setDatabaseListener(dbListener);
        
-       Values values = new Values();     
-            values.put("id", 1 , Values.INT);
-       
-        
-       InsertQuery query = InsertQuery.into("emp").values(values);
-       
-       sql.insert(query);
        
    
        //Insert Demo
@@ -37,10 +27,7 @@ public class SQLDB {
         values.put("name", "Piyush Patil", Values.STRING);
         values.put("id", "11", Values.INT);
         values.put("salary", 378000.80, Values.DOUBLE);
-          
-        
-        
-        
+             
         InsertQuery insertQuery = InsertQuery.into("emp").values(values);
         sql.insert(insertQuery);
         
