@@ -1,7 +1,7 @@
 # Easy Database (API Demo)
 
 **Initialization of Database**
-```
+```java
 EasyDatabase sql = new EasyDatabase(
            EasyDatabase.MYSQL,  //Database Server
            "DATABASE_URL", //Host or File
@@ -11,7 +11,7 @@ EasyDatabase sql = new EasyDatabase(
 ```
 
 **Database Driver Constants**
-```
+```java
 EasyDatabase.MYSQL  //For MySQL Database
 EasyDatabase.ORACLE //For Oracle Database
 EasyDatabase.ACCESS //For MS-Access Database
@@ -19,7 +19,7 @@ EasyDatabase.ACCESS //For MS-Access Database
 
 **Register Listener for Database events**
 
-```
+```java
  DatabaseListener dbListener = new DatabaseListener(){
         @Override
         public void onSuccess(DatabaseEvent e) {
@@ -36,7 +36,7 @@ EasyDatabase.ACCESS //For MS-Access Database
 
 **Insertion**
 
-```
+```java
 Values values = new Values();
 values.put("name", "Piyush Patil", Values.STRING);
 values.put("id", "11", Values.INT);
@@ -48,7 +48,7 @@ sql.insert(insertQuery);
 
 **Select from Table**
 
-```
+```java
 SelectQuery select = SelectQuery.select()
             .fromTable("emp")
             .where(SelectQuery.getCondition()
@@ -69,7 +69,7 @@ SelectQuery select = SelectQuery.select()
 
 **Deletion of Record**
 
-```
+```java
 DeleteQuery delete = DeleteQuery.fromTable("emp")
             .where(DeleteQuery.getCondition()
                 .equalTo("name", "Prem Patil", ColumnType.STRING)
