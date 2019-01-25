@@ -46,7 +46,7 @@ InsertQuery insertQuery = InsertQuery.into("emp").values(values);
 sql.insert(insertQuery);
 ```
 
-**Select from Table **
+**Select from Table**
 
 ```
 SelectQuery select = SelectQuery.select()
